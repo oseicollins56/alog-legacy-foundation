@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ALOG Legacy Foundation | Website design options</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/png" href="option-a/assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --navy: #10264a; --gold: #dca52a; --muted: #5a6476; --line: #e3e7ee; --mist: #f4f6fa; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--mist); color: #1b2536; font: 400 1rem/1.6 "Plus Jakarta Sans", system-ui, sans-serif; }
+    .wrap { width: min(100% - 32px, 1100px); margin: 0 auto; padding: 56px 0 72px; }
+    header { display: flex; align-items: center; gap: 14px; }
+    header img { width: 60px; height: auto; }
+    header p { margin: 0; font-family: "DM Serif Display", Georgia, serif; font-size: 1.5rem; color: var(--navy); line-height: 1.1; }
+    header small { display: block; font-family: "Plus Jakarta Sans", sans-serif; font-size: .85rem; color: #a97910; }
+    h1 { font-family: "DM Serif Display", Georgia, serif; font-weight: 400; color: var(--navy); font-size: clamp(2rem, 1.4rem + 2.4vw, 3rem); line-height: 1.1; margin: 40px 0 10px; }
+    .lead { color: var(--muted); max-width: 56ch; margin: 0 0 40px; font-size: 1.08rem; }
+    .options { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    .option { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: 20px; overflow: hidden; text-decoration: none; color: inherit; box-shadow: 0 18px 40px -26px rgba(16,38,74,.45); transition: transform .2s, box-shadow .2s; }
+    .option:hover { transform: translateY(-3px); box-shadow: 0 24px 48px -26px rgba(16,38,74,.55); }
+    .option:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    .option img { width: 100%; aspect-ratio: 1440 / 1000; object-fit: cover; object-position: top; border-bottom: 1px solid var(--line); display: block; }
+    .option div { padding: 22px 24px 26px; }
+    .option h2 { margin: 0; font-family: "DM Serif Display", Georgia, serif; font-weight: 400; color: var(--navy); font-size: 1.6rem; }
+    .option p { margin: 6px 0 18px; color: var(--muted); }
+    .option span { display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; background: var(--gold); color: #0a1a35; font-weight: 700; font-size: .95rem; }
+    footer { margin-top: 44px; color: var(--muted); font-size: .9rem; }
+    @media (max-width: 760px) { .options { grid-template-columns: 1fr; } .wrap { padding-top: 36px; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <img src="option-a/assets/img/logo-emblem.png" alt="" width="60" height="53">
+      <p>ALOG<small>Legacy Foundation</small></p>
+    </header>
+    <h1>Two website designs to choose from</h1>
+    <p class="lead">Both use the same content, logo and colours. Open each one, scroll through it on your phone and computer, and let us know which you prefer. Photos and figures are placeholders until the foundation's own are ready.</p>
+
+    <div class="options">
+      <a class="option" href="option-a/">
+        <img src="previews/option-a.jpg" alt="Preview of Option A: headline beside a photo cut in the shape of Ghana" width="900" height="625">
+        <div>
+          <h2>Option A</h2>
+          <p>Light and calm, with elegant serif headings and a photo framed in the map of Ghana.</p>
+          <span>View Option A</span>
+        </div>
+      </a>
+      <a class="option" href="option-b/">
+        <img src="previews/option-b.jpg" alt="Preview of Option B: full-width black and white photo slider with headline" width="900" height="625">
+        <div>
+          <h2>Option B</h2>
+          <p>Bold and photo-led, with a full-width image slider, events and news sections.</p>
+          <span>View Option B</span>
+        </div>
+      </a>
+    </div>
+
+    <footer>Design preview for ALOG Legacy Foundation, Accra, Ghana.</footer>
+  </main>
+</body>
+</html>
