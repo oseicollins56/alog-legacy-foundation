@@ -19,7 +19,7 @@ assets/img/           logo files and placeholder photos
 
 ## How donations and messages work
 
-There is no payment backend yet. The donation picker and the contact form both open WhatsApp to **054 901 3477** with a pre-filled message (amount, frequency, program, or the visitor's note). To change the number, edit `WHATSAPP_NUMBER` at the top of `assets/js/main.js` (international format, no `+`).
+There is no payment backend yet. The donation picker and the contact form both open WhatsApp to **055 847 2722** with a pre-filled message (amount, frequency, program, or the visitor's note). To change the number, edit `WHATSAPP_NUMBER` at the top of `assets/js/main.js` (international format, no `+`).
 
 ## Placeholders to replace before launch
 
@@ -34,4 +34,4 @@ Search `index.html` for `PLACEHOLDER` and `TODO`:
 - **MoMo / bank details**: add in the donate band once confirmed.
 - **Photos**: all photos are placeholders from Unsplash (see `CREDITS.md`). Replace with the foundation's own photos using the same file names to keep the layout.
 
-Confirm 054 901 3477 is on WhatsApp; if the other number is, swap it in.
+Confirm 055 847 2722 is on WhatsApp.

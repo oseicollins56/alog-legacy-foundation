@@ -3,7 +3,7 @@
   "use strict";
 
   // Main WhatsApp number (international format, no + or spaces)
-  var WHATSAPP_NUMBER = "233549013477";
+  var WHATSAPP_NUMBER = "233558472722";
 
   function openWhatsApp(text) {
     var url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(text);

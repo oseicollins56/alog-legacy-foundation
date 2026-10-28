@@ -108,6 +108,28 @@ h3 { font-size: 1.3rem; }
 .nav-toggle[aria-expanded="true"] .nav-toggle__bar::before { transform: rotate(45deg); }
 .nav-toggle[aria-expanded="true"] .nav-toggle__bar::after { transform: rotate(-45deg); }
 
+/* Top bar contact + social icons */
+.topbar__right { display: flex; align-items: center; gap: 18px; }
+.topbar a.topbar__item { color: #d3dbe8; text-decoration: none; }
+.topbar a.topbar__item:hover { color: var(--gold); }
+.socials { display: flex; gap: 10px; }
+.socials a {
+  display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(255,255,255,.08); color: #fff; transition: background-color .2s, color .2s;
+}
+.socials a:hover { background: var(--gold); color: var(--navy-deep); }
+.socials svg { width: 18px; height: 18px; fill: currentColor; }
+.socials--top { gap: 4px; }
+.socials--top a { width: 30px; height: 30px; background: transparent; color: #d3dbe8; }
+.socials--top svg { width: 15px; height: 15px; }
+.socials--dark { margin-top: 8px; }
+.contact__list .socials a { background: var(--navy); color: #fff; }
+.contact__list .socials a:hover { background: var(--gold); color: var(--navy-deep); }
+.site-footer a[href^="mailto:"], .contact__list a[href^="mailto:"] { overflow-wrap: anywhere; }
+.site-footer .socials { margin-top: 18px; }
+.contact__list .socials li { padding: 0; border: 0; }
+.site-footer ul.socials { display: flex; gap: 10px; }
+
 /* ---------- Hero slider ---------- */
 .hero { position: relative; background: var(--navy-deep); color: #fff; overflow: hidden; }
 .hero__slides { display: grid; }
@@ -304,7 +326,7 @@ h3 { font-size: 1.3rem; }
 
 /* ---------- Footer ---------- */
 .site-footer { background: var(--navy-deep); color: #b9c4d6; padding-top: clamp(56px, 7vw, 84px); font-size: .95rem; }
-.site-footer__inner { display: grid; grid-template-columns: 1.3fr .8fr .8fr 1fr; gap: 40px; }
+.site-footer__inner { display: grid; grid-template-columns: 1.3fr .7fr 1.05fr 1fr; gap: 40px; }
 .site-footer h2 { font-family: var(--font-head); font-size: 1.1rem; color: #fff; margin-bottom: 16px; }
 .site-footer ul { display: grid; gap: 10px; }
 .site-footer a { text-decoration: none; }
