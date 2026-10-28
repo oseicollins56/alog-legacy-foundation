@@ -10,21 +10,29 @@
     window.open(url, "_blank", "noopener");
   }
 
+  var header = document.querySelector(".site-header");
+
   // ---------- Mobile navigation ----------
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("site-nav");
-  function closeNav() { nav.classList.remove("is-open"); toggle.setAttribute("aria-expanded", "false"); }
-  toggle.addEventListener("click", function () {
-    var open = nav.classList.toggle("is-open");
+  function setNav(open) {
+    if (open) {
+      // the phone menu fills the screen from just under the header
+      nav.style.setProperty("--nav-top", Math.max(0, header.getBoundingClientRect().bottom) + "px");
+    }
+    nav.classList.toggle("is-open", open);
+    document.body.classList.toggle("nav-open", open);
     toggle.setAttribute("aria-expanded", String(open));
-  });
+  }
+  function closeNav() { setNav(false); }
+  toggle.addEventListener("click", function () { setNav(!nav.classList.contains("is-open")); });
+  window.addEventListener("resize", function () { if (window.innerWidth > 900 && nav.classList.contains("is-open")) closeNav(); });
   nav.addEventListener("click", function (e) { if (e.target.closest("a")) closeNav(); });
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && nav.classList.contains("is-open")) { closeNav(); toggle.focus(); }
   });
 
   // ---------- Header shadow ----------
-  var header = document.querySelector(".site-header");
   function onScroll() { header.classList.toggle("is-scrolled", window.scrollY > 8); }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
@@ -71,8 +79,63 @@
   hero.addEventListener("mouseleave", start);
   hero.addEventListener("focusin", stop);
   hero.addEventListener("focusout", start);
+  // Finger swipe on phones (auto-advance carries on afterwards)
+  var touchX = null, touchY = null;
+  var slideBox = document.querySelector(".hero__slides");
+  slideBox.addEventListener("touchstart", function (e) {
+    touchX = e.touches[0].clientX; touchY = e.touches[0].clientY; stop();
+  }, { passive: true });
+  slideBox.addEventListener("touchend", function (e) {
+    if (touchX !== null) {
+      var dx = e.changedTouches[0].clientX - touchX;
+      var dy = e.changedTouches[0].clientY - touchY;
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) show(current + (dx < 0 ? 1 : -1));
+    }
+    touchX = null; start();
+  }, { passive: true });
+
+  // Pause while the tab is hidden, so phones don't burn battery
+  document.addEventListener("visibilitychange", function () { if (document.hidden) stop(); else start(); });
+
   show(0);
   start();
+
+  // ---------- Swipeable card rows (phones) ----------
+  document.querySelectorAll("[data-swipe]").forEach(function (row, r) {
+    var items = Array.prototype.slice.call(row.children);
+    if (items.length < 2) return;
+    var dotsBox = document.createElement("div");
+    dotsBox.className = "swipe-dots";
+    var dotBtns = items.map(function (item, n) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.setAttribute("aria-label", "Show item " + (n + 1) + " of " + items.length);
+      b.addEventListener("click", function () {
+        row.scrollTo({ left: item.offsetLeft - row.offsetLeft - 16, behavior: reduceMotion ? "auto" : "smooth" });
+      });
+      dotsBox.appendChild(b);
+      return b;
+    });
+    row.insertAdjacentElement("afterend", dotsBox);
+    function mark() {
+      var mid = row.scrollLeft + row.clientWidth / 2, best = 0, bestD = Infinity;
+      items.forEach(function (item, n) {
+        var c = item.offsetLeft - row.offsetLeft + item.offsetWidth / 2;
+        var d = Math.abs(c - mid); if (d < bestD) { bestD = d; best = n; }
+      });
+      if (row.scrollLeft < 8) best = 0;
+      if (row.scrollLeft + row.clientWidth >= row.scrollWidth - 8) best = items.length - 1;
+      dotBtns.forEach(function (b, n) { b.setAttribute("aria-current", String(n === best)); });
+    }
+    row.addEventListener("scroll", function () { window.requestAnimationFrame(mark); }, { passive: true });
+    mark();
+  });
+
+  // Hide the bottom action bar while someone is typing in a form
+  document.addEventListener("focusin", function (e) {
+    if (e.target.matches("input, textarea, select")) document.body.classList.add("is-typing");
+  });
+  document.addEventListener("focusout", function () { document.body.classList.remove("is-typing"); });
 
   // ---------- Donation band ----------
   var form = document.getElementById("donate-form");

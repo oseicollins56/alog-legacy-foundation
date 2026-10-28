@@ -17,6 +17,14 @@ assets/img/           logo files and placeholder photos
 2. In the repository, open **Settings > Pages**, set **Source** to "Deploy from a branch", choose `main` and `/ (root)`, then save.
 3. After a minute the site is live at `https://<your-username>.github.io/alog-legacy-foundation/`.
 
+## Phone features
+
+- Bottom bar on phones and tablets with Call, WhatsApp and Donate (hidden while typing in a form).
+- Hero photos can be swiped with a finger and still change on their own.
+- Causes, testimonials, events and news become swipeable rows with dots on small screens.
+- Phones download smaller copies of the large photos (`*-800.jpg`).
+- `manifest.webmanifest` lets visitors add the site to their home screen with the ALOG icon.
+
 ## How donations and messages work
 
 There is no payment backend yet. The donation picker and the contact form both open WhatsApp to **055 847 2722** with a pre-filled message (amount, frequency, program, or the visitor's note). To change the number, edit `WHATSAPP_NUMBER` at the top of `assets/js/main.js` (international format, no `+`).
