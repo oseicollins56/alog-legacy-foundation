@@ -1,6 +1,6 @@
 # Photo credits
 
-Placeholder photos are from Unsplash (free under the Unsplash License). Replace them with the foundation's own photos before launch.
+Placeholder photos are from Unsplash and Pexels (free under their licenses). Replace them with the foundation's own photos before launch.
 
 | File | Unsplash photo |
 |---|---|
@@ -10,9 +10,10 @@ Placeholder photos are from Unsplash (free under the Unsplash License). Replace 
 | welcome.jpg | https://unsplash.com/photos/boy-in-green-and-white-collared-shirt-OlJk99PX0Os |
 | event-1.jpg | https://unsplash.com/photos/children-sitting-on-chairs-inside-classroom-jEEYZsaxbH4 (Doug Linstedt) |
 | strip-1.jpg | https://unsplash.com/photos/a-group-of-young-children-standing-next-to-each-other-vOxIhoEXPvc |
-| promise-care.jpg | https://unsplash.com/photos/woman-carrying-baby-on-back-yrzBgqapG1I |
+| promise-care.jpg | https://www.pexels.com/photo/young-woman-feeding-little-child-16780430/ (Safari Consoler, Pexels License) |
 | promise-education.jpg | https://unsplash.com/photos/boy-in-green-and-white-polo-shirt-AmKMFcROG9o |
-| promise-opportunity.jpg | https://unsplash.com/photos/tilt-shift-photography-of-people-Sn04BHfa2AY |
+| promise-opportunity.jpg | https://unsplash.com/photos/smiling-boy-sitting-while-holding-soccer-ball-at-daytime-YEK-1BZ7L1s (Seth Doyle) |
+| news-apprentices.jpg | https://unsplash.com/photos/tilt-shift-photography-of-people-Sn04BHfa2AY |
 | promise-for-life.jpg | https://unsplash.com/photos/girl-smiling-in-front-of-camera-ZyWN6N41JUc |
 | about-writing.jpg | https://unsplash.com/photos/children-writing-in-books-feU8G7E5ODI (Annie Spratt) |
 | program-education.jpg | https://unsplash.com/photos/children-sitting-on-chairs-inside-classroom-jEEYZsaxbH4 (Doug Linstedt) |
