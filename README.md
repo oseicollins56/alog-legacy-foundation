@@ -25,11 +25,13 @@ There is no payment backend yet. The donation picker and the contact form both o
 
 Search `index.html` for `PLACEHOLDER` and `TODO`:
 
-- **Program figures**: raised and goal amounts on the three program cards (also update the `--p` percentage and `aria-valuenow`).
+- **Cause figures**: raised and goal amounts on the three cause cards (also update `--p`, the % label and `aria-valuenow`).
 - **Impact numbers**: children supported, partner schools, families, volunteers.
-- **Testimonial**: quote, name and role.
+- **Testimonials**: quotes, names and roles.
+- **Events**: dates, times and places.
+- **News stories**: headlines, dates and text.
 - **Address**: currently "Accra, Ghana".
-- **MoMo / bank details**: add under the "Give today" heading once confirmed.
+- **MoMo / bank details**: add in the donate band once confirmed.
 - **Photos**: all photos are placeholders from Unsplash (see `CREDITS.md`). Replace with the foundation's own photos using the same file names to keep the layout.
 
 Confirm 054 901 3477 is on WhatsApp; if the other number is, swap it in.
